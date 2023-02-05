@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clear": "rm -rf dist",
+    "transpile": "babel server -d dist",
+    "build": "npm run clear && npm run transpile",
+    "dev": "npm run build && nodemon dist/bin/www",
+    "server": "DEBUG=backend:* npm start",
+    "server-win": "SET DEBUG=backend:* | npm start",
+    "start": "npm run build && node dist/bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.20"
+  }
+}
